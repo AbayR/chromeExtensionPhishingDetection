@@ -2,20 +2,23 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.action === "fetchEmailText") {
         var emailText = getEmailText(); // Function to get email text
-        sendResponse({emailText: emailText});
+        sendResponse({ emailText: emailText }); // Ensure this is correctly structured
         return true;  // Indicate that the response is asynchronous
     }
-}); 
+});
 
 function getEmailText() {
-    // Assuming there's only one open email being analyzed
-    var openEmailBody = document.querySelector('div[data-message-id] div[role="listitem"]');
+    // Updated selector to target the div with class 'a3s aiL'
+    var openEmailBody = document.querySelector('div.a3s.aiL');
     if (openEmailBody) {
         return openEmailBody.innerText;
     } else {
-        return "check this baby out go for the link to see more!!!";
+        // Fallback message or handling if the email body is not found
+        return "No email content found";
     }
 }
+
+
 
 
 /*
