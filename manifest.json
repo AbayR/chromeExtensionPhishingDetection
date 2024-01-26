@@ -7,9 +7,9 @@
     "action": {
       "default_popup": "popup.html",
       "default_icon": {
-        "16": "images/icon48.png",
-        "48": "images/icon48.png",
-        "128": "images/icon48.png"
+        "16": "icon48.png",
+        "48": "icon48.png",
+        "128": "icon48.png"
       }
     },
     "oauth2": {
@@ -28,8 +28,8 @@
         "service_worker": "background.js"
     },
     "icons": {
-      "16": "images/icon48.png",
-      "48": "images/icon48.png",
-      "128": "images/icon48.png"
+      "16": "icon48.png",
+      "48": "icon48.png",
+      "128": "icon48.png"
     }
 }
