@@ -53,7 +53,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             chrome.tabs.sendMessage(tabs[0].id, {action: "fetchEmailText"}, function(response) {
                 if(response.emailText){
-                    query({inputs: response.emailText}).then(apiResponse => {
+                    query({inputs: response.emailText, options: { isHTML: true }}).then(apiResponse => {
                         let result = processApiResponse(apiResponse);
                         sendResponse({result: result});
                     }).catch(error => {
